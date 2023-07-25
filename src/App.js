@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+ 
+
+import * as React from 'react';
+import Accordion from '@mui/material/Accordion';
+import AccordionSummary from '@mui/material/AccordionSummary';
+import AccordionDetails from '@mui/material/AccordionDetails';
+import Typography from '@mui/material/Typography';
+import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
+import Select from './Select';
+
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div style={{
+        display:'flex',
+        justifyContent:'center',
+        alignItems:'center',
+        height:'100vh'
+    }}>
+       <div>
+        <Accordion>  {/*Basic Accordian*/}
+            <AccordionSummary
+            expandIcon={<ExpandMoreIcon />}
+            aria-controls="panel1a-content"
+            id="panel1a-header"
+            >
+            <Typography>Accordion</Typography>
+            </AccordionSummary>
+            <AccordionDetails>
+             <div style={{margintop:'10px', marginBottom:'10px'}}>
+             <Typography variant='h5'>$555000</Typography>
+             </div>
+            <Select />
+            </AccordionDetails>
+        </Accordion>
+       </div>
     </div>
   );
 }
-
-export default App;
