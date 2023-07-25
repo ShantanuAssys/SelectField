@@ -10,6 +10,7 @@ import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
 import Select from './Select';
 
 export default function App() {
+    {/*Basic Accordian*/}
   return (
     <div style={{
         display:'flex',
@@ -18,7 +19,7 @@ export default function App() {
         height:'100vh'
     }}>
        <div>
-        <Accordion>  {/*Basic Accordian*/}
+        <Accordion>  
             <AccordionSummary
             expandIcon={<ExpandMoreIcon />}
             aria-controls="panel1a-content"
