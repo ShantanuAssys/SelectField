@@ -128,7 +128,7 @@ function Select() {
                     {...params}
                     variant="standard"
                     label="Multiple values"
-                    placeholder="Favorites"
+                    placeholder="Add here"
                     onChange
                 />
                 )}
