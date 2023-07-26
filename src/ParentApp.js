@@ -12,7 +12,8 @@ const ParentApp = () =>{
         inputValue, 
         setInputValue,
         operators,
-        runOnChange
+        runOnChange,
+        formatter
       ] = useValues()
     return(
         <Context.Provider value={{
@@ -23,7 +24,8 @@ const ParentApp = () =>{
             inputValue, 
             setInputValue,
             operators,
-            runOnChange
+            runOnChange,
+            formatter
         }}>
              <App />
         </Context.Provider>

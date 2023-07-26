@@ -60,6 +60,11 @@ const useValues = () =>{
     console.log(value)
   }
 
+  const formatter = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
 
   return[
     options, 
@@ -69,7 +74,8 @@ const useValues = () =>{
     inputValue, 
     setInputValue,
     operators,
-    runOnChange
+    runOnChange,
+    formatter
   ]
 }
 

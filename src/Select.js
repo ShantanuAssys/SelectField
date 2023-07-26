@@ -70,14 +70,7 @@ const filterOption = (options) =>{
     return options.filter((o) => o.type === "Variable")
 }
 
-const renderInput = (params) => (
-  <TextField
-    {...params}
-    variant="standard"
-    label="Multiple values"
-    placeholder="Add here"
-  />
-);
+
 
 function Select({ onBlurCal }) {
   const {
@@ -86,7 +79,24 @@ function Select({ onBlurCal }) {
     setValue,
     inputValue,
     runOnChange,
+    operators,
+    setInputValue
   } = useContext(Context)
+
+  const renderInput = (params) => (
+    <TextField
+      {...params}
+      variant="standard"
+      label="Multiple values"
+      placeholder="Add here"
+      onBlur={(event) =>{
+        
+        setValue([...value, {key:'Value', def:event.target.value}])
+        setInputValue('')
+      }}
+    />
+  );
+
   const onSelectionChange = (event, data) => {
     setValue([...data]); // updating state on selection, But some how showing error when adding input, not a blocker
   };

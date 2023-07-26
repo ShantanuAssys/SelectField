@@ -12,7 +12,7 @@ export default function App() {
   // Basic Accordian
   const [validExpression, setValidExpression] = React.useState(true);
   const [amount, setAmount] = React.useState(0);
-  const { options, value } = React.useContext(Context)
+  const { options, value, formatter } = React.useContext(Context)
 
   const calculate = () =>{
     try {
@@ -65,7 +65,7 @@ export default function App() {
               ERROR!!
             </Typography>
           )}
-          {validExpression && <Typography variant="h5">{amount}</Typography>}
+          {validExpression && <Typography variant="h5">{formatter.format(amount)}</Typography>}
         </div>
         <Select />
         {/* </AccordionDetails>
